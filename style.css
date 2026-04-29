@@ -1,0 +1,217 @@
+/* 1. DEFINIÇÃO DAS VARIÁVEIS (A alma do Zen Garden) */
+:root {
+    --bg-color: #ffffff;
+    --primary-color: #0a2e24;
+    /* Seu verde escuro */
+    --text-color: #0a2e24;
+    --hero-bg: #0a2e24;
+    --hero-text: #ffffff;
+    --card-border: #e0e0e0;
+}
+
+/* 2. RESET E FONTES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color 0.5s ease, color 0.5s ease;
+    /* Transição suave */
+}
+
+/* 3. NAVEGAÇÃO */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 10%;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+/* 4. HERO SECTION (DESTAQUE) */
+.hero {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--hero-bg);
+    color: var(--hero-text);
+    padding: 0 10%;
+    transition: background-color 0.8s ease;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.btn {
+    margin-top: 20px;
+    padding: 12px 30px;
+    background-color: var(--hero-text);
+    color: var(--hero-bg);
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* 5. SELETOR DE TEMAS (O BOTÃO) */
+.theme-switcher {
+    padding: 10px 10%;
+    text-align: right;
+    background: #f4f4f4;
+    font-size: 0.8rem;
+}
+
+.theme-switcher button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border: 1px solid var(--primary-color);
+    background: transparent;
+    color: var(--primary-color);
+    border-radius: 3px;
+}
+
+/* 6. PROJETOS */
+.section {
+    padding: 80px 10%;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card {
+    border: 1px solid var(--card-border);
+    padding: 40px;
+    text-align: center;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    opacity: 0.7;
+}
+
+/* Container das notas */
+.notes-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* O "Bloco de Notas" individual */
+.note-card {
+    background: #fdfdfd;
+    border-left: 4px solid var(--primary-color);
+    /* Traço verde lateral */
+    padding: 20px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 0 5px 5px 0;
+}
+
+.note-card small {
+    color: #888;
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* Hashtags */
+.note-tags {
+    margin-top: 10px;
+}
+
+.tag {
+    font-size: 0.85rem;
+    color: var(--primary-color);
+    background: rgba(10, 46, 36, 0.05);
+    padding: 3px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 5px;
+    transition: 0.3s;
+}
+
+.tag:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.filters {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Ajustes para Celulares (Telas até 768px) */
+@media (max-width: 768px) {
+
+    /* Diminui o recuo lateral para ganhar espaço */
+    .navbar,
+    .hero,
+    .section,
+    .theme-switcher {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    /* Transforma o menu em uma coluna ou centraliza */
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .nav-links {
+        gap: 15px;
+        font-size: 0.9rem;
+    }
+
+    /* Reduz o tamanho do texto principal para não ocupar a tela toda */
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    /* Garante que os cards ocupem a largura total em telas muito pequenas */
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
