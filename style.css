@@ -1,17 +1,21 @@
 :root {
     --bg-dark: #050a0e;
-    /* Fundo quase preto da imagem */
     --accent-green: #7fd1b9;
-    /* Verde água do logo */
-    --text-white: #ffffff;
-    --bg-light: #f4f7f6;
+    --text-main: #ffffff;
+    /* Nova variável para o texto principal */
+    --text-soft: rgba(255, 255, 255, 0.85);
+    /* Nova variável para o texto suave */
 }
 
 body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
     background-color: var(--bg-dark);
-    color: var(--text-white);
+    color: var(--text-main);
+    /* Usa a variável aqui */
+}
+
+.about-text p {
+    color: var(--text-soft);
+    /* Usa a variável aqui */
 }
 
 /* Navbar centralizada */
@@ -115,17 +119,38 @@ body {
     color: #333;
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
+
+    /* Ajusta a Navbar para empilhar os itens */
     .nav-links {
-        gap: 10px;
-        font-size: 0.7rem;
+        flex-direction: column;
+        gap: 15px;
+        padding: 0;
+        align-items: center;
+    }
+
+    /* Move o switcher de tema para o canto inferior para não obstruir o menu */
+    .theme-switcher {
+        top: auto;
+        bottom: 20px;
+        right: 20px;
     }
 
     .main-logo {
-        width: 80%;
+        width: 70%;
+        margin: 20px auto;
+    }
+
+    .hero {
+        padding-top: 60px;
+        /* Dá espaço para o menu superior */
+    }
+
+    .about-section {
+        padding: 60px 20px;
     }
 }
+
 
 /* Posicionamento do Switcher */
 .theme-switcher {
@@ -210,16 +235,6 @@ body {
     background: var(--accent-green);
 }
 
-.about-text p {
-    font-size: 1.15rem;
-    line-height: 1.8;
-    /* Espaçamento entre linhas para não cansar a vista */
-    margin-bottom: 25px;
-    color: rgba(255, 255, 255, 0.85);
-    /* Branco levemente suavizado */
-    font-weight: 300;
-    /* Fonte mais fina para ar elegante */
-}
 
 .about-text strong {
     color: var(--accent-green);

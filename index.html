@@ -83,20 +83,18 @@
     <script>
         function setTheme(theme) {
             const root = document.documentElement;
-
             if (theme === 'forest') {
-                // TEMA ESCURO (Igual à imagem)
                 root.style.setProperty('--bg-dark', '#050a0e');
-                root.style.setProperty('--accent-green', '#7fd1b9'); // Verde água brilhante
-                root.style.setProperty('--text-white', '#ffffff');
+                root.style.setProperty('--accent-green', '#7fd1b9');
+                root.style.setProperty('--text-main', '#ffffff');
+                root.style.setProperty('--text-soft', 'rgba(255, 255, 255, 0.85)');
             } else {
-                // TEMA CLARO
-                root.style.setProperty('--bg-dark', '#ffffff'); // Fundo vira branco
-                root.style.setProperty('--accent-green', '#0a2e24'); // O botão vira VERDE ESCURO para aparecer no fundo branco
-                root.style.setProperty('--text-white', '#0a2e24');
+                root.style.setProperty('--bg-dark', '#ffffff');
+                root.style.setProperty('--accent-green', '#0a2e24');
+                root.style.setProperty('--text-main', '#1a1a1a');
+                root.style.setProperty('--text-soft', '#444444');
             }
         }
-
 
 
         const myNotes = [
