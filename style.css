@@ -1,217 +1,228 @@
-/* 1. DEFINIÇÃO DAS VARIÁVEIS (A alma do Zen Garden) */
 :root {
-    --bg-color: #ffffff;
-    --primary-color: #0a2e24;
-    /* Seu verde escuro */
-    --text-color: #0a2e24;
-    --hero-bg: #0a2e24;
-    --hero-text: #ffffff;
-    --card-border: #e0e0e0;
-}
-
-/* 2. RESET E FONTES */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Inter', -apple-system, sans-serif;
+    --bg-dark: #050a0e;
+    /* Fundo quase preto da imagem */
+    --accent-green: #7fd1b9;
+    /* Verde água do logo */
+    --text-white: #ffffff;
+    --bg-light: #f4f7f6;
 }
 
 body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    line-height: 1.6;
-    transition: background-color 0.5s ease, color 0.5s ease;
-    /* Transição suave */
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-white);
 }
 
-/* 3. NAVEGAÇÃO */
+/* Navbar centralizada */
 .navbar {
     display: flex;
-    justify-content: space-between;
-    padding: 2rem 10%;
-    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 30px;
 }
 
 .nav-links a {
+    color: var(--accent-green);
     text-decoration: none;
-    color: var(--text-color);
-    font-weight: 500;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-/* 4. HERO SECTION (DESTAQUE) */
+/* Hero e Logo */
 .hero {
-    height: 60vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     text-align: center;
-    background-color: var(--hero-bg);
-    color: var(--hero-text);
-    padding: 0 10%;
-    transition: background-color 0.8s ease;
+    padding-bottom: 50px;
 }
 
-.hero h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+.main-logo {
+    max-width: 300px;
+    margin: 40px auto;
+    display: block;
 }
 
-.btn {
-    margin-top: 20px;
+.btn-outline {
+    border: 1px solid var(--text-white);
+    color: var(--text-white);
     padding: 12px 30px;
-    background-color: var(--hero-text);
-    color: var(--hero-bg);
     text-decoration: none;
-    border-radius: 4px;
-    font-weight: bold;
+    border-radius: 5px;
     transition: 0.3s;
 }
 
-/* 5. SELETOR DE TEMAS (O BOTÃO) */
-.theme-switcher {
-    padding: 10px 10%;
-    text-align: right;
-    background: #f4f4f4;
-    font-size: 0.8rem;
+.btn-outline:hover {
+    background: var(--text-white);
+    color: var(--bg-dark);
 }
 
-.theme-switcher button {
-    margin-left: 10px;
-    padding: 5px 10px;
-    cursor: pointer;
-    border: 1px solid var(--primary-color);
-    background: transparent;
-    color: var(--primary-color);
-    border-radius: 3px;
-}
-
-/* 6. PROJETOS */
-.section {
-    padding: 80px 10%;
-}
-
+/* Cards de Projetos */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 0 10%;
 }
 
-.card {
-    border: 1px solid var(--card-border);
-    padding: 40px;
-    text-align: center;
-    border-radius: 8px;
-    transition: all 0.3s ease;
+.card-dark {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: left;
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    border-color: var(--primary-color);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-}
-
-footer {
-    text-align: center;
-    padding: 40px;
-    opacity: 0.7;
-}
-
-/* Container das notas */
-.notes-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-top: 20px;
-}
-
-/* O "Bloco de Notas" individual */
-.note-card {
-    background: #fdfdfd;
-    border-left: 4px solid var(--primary-color);
-    /* Traço verde lateral */
-    padding: 20px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.05);
-    border-radius: 0 5px 5px 0;
-}
-
-.note-card small {
-    color: #888;
-    display: block;
-    margin-bottom: 8px;
-}
-
-/* Hashtags */
-.note-tags {
-    margin-top: 10px;
-}
-
-.tag {
-    font-size: 0.85rem;
-    color: var(--primary-color);
-    background: rgba(10, 46, 36, 0.05);
-    padding: 3px 8px;
-    border-radius: 4px;
+.btn-card {
+    background: var(--accent-green);
+    color: var(--bg-dark);
+    /* Faz o texto do botão ser a cor do fundo oposto */
+    border: none;
+    padding: 8px 20px;
+    /* Aumentei um pouco para ficar mais profissional */
+    border-radius: 20px;
     cursor: pointer;
-    margin-right: 5px;
-    transition: 0.3s;
+    margin-top: 15px;
+    font-weight: bold;
+    transition: all 0.5s ease;
+    /* ISSO FAZ A MÁGICA DA TRANSIÇÃO */
 }
 
-.tag:hover {
-    background: var(--primary-color);
-    color: white;
+.btn-card:hover {
+    filter: brightness(1.1);
+    /* Dá um brilho ao passar o mouse */
+    transform: scale(1.05);
 }
 
-.filters {
-    margin-bottom: 20px;
+/* Seção de Notas (Fundo Branco como na imagem) */
+.notes-section {
+    background-color: #ffffff;
+    color: #333;
+    padding: 80px 10%;
+    margin-top: 50px;
+    border-radius: 40px 40px 0 0;
+    /* Curva suave no topo */
+}
+
+.note-card {
+    background: #edf2f0;
+    padding: 20px;
+    border-radius: 8px;
+    color: #333;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .nav-links {
+        gap: 10px;
+        font-size: 0.7rem;
+    }
+
+    .main-logo {
+        width: 80%;
+    }
+}
+
+/* Posicionamento do Switcher */
+.theme-switcher {
+    position: fixed;
+    /* Ele fica fixo enquanto você rola a página */
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
     display: flex;
     gap: 10px;
-    flex-wrap: wrap;
 }
 
-/* Ajustes para Celulares (Telas até 768px) */
-@media (max-width: 768px) {
+/* Estilo do Botão Circular (Emblema) */
+.theme-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--accent-green);
+    color: var(--accent-green);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    /* Faz o botão ser um círculo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    /* Efeito de vidro fosco */
+}
 
-    /* Diminui o recuo lateral para ganhar espaço */
-    .navbar,
-    .hero,
-    .section,
-    .theme-switcher {
-        padding-left: 5%;
-        padding-right: 5%;
-    }
+.theme-btn i {
+    font-size: 1.2rem;
+}
 
-    /* Transforma o menu em uma coluna ou centraliza */
-    .navbar {
-        flex-direction: column;
-        gap: 15px;
-        text-align: center;
-    }
+/* Efeito ao passar o mouse */
+.theme-btn:hover {
+    background: var(--accent-green);
+    color: var(--bg-dark);
+    transform: scale(1.1);
+    /* Aumenta levemente */
+}
 
-    .nav-links {
-        gap: 15px;
-        font-size: 0.9rem;
-    }
+/* Ajuste para o modo claro (quando as variáveis mudarem) */
+[style*="--bg-dark: #ffffff"] .theme-btn {
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--accent-green);
+}
 
-    /* Reduz o tamanho do texto principal para não ocupar a tela toda */
-    .hero h1 {
-        font-size: 2rem;
-    }
+.about-section {
+    padding: 100px 20px;
+    /* Mais espaço em cima e embaixo */
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    display: flex;
+    justify-content: center;
+    /* Centraliza horizontalmente */
+}
 
-    .hero p {
-        font-size: 1rem;
-    }
+.about-section .container {
+    max-width: 850px;
+    /* Impede o texto de ficar esticado e feio */
+    text-align: left;
+    /* Texto alinhado à esquerda é mais fácil de ler */
+}
 
-    /* Garante que os cards ocupem a largura total em telas muito pequenas */
-    .grid {
-        grid-template-columns: 1fr;
-    }
+.about-section h2 {
+    color: var(--accent-green);
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    position: relative;
+    display: inline-block;
+}
+
+/* Linha decorativa embaixo do título (opcional, fica bem profissional) */
+.about-section h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 50px;
+    height: 3px;
+    background: var(--accent-green);
+}
+
+.about-text p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    /* Espaçamento entre linhas para não cansar a vista */
+    margin-bottom: 25px;
+    color: rgba(255, 255, 255, 0.85);
+    /* Branco levemente suavizado */
+    font-weight: 300;
+    /* Fonte mais fina para ar elegante */
+}
+
+.about-text strong {
+    color: var(--accent-green);
+    /* Destaca palavras-chave com o seu verde */
+    font-weight: 500;
 }
